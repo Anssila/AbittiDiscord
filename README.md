@@ -18,6 +18,7 @@ To get the bot running, create a file called config.json that looks like this:
     "UPDATE_FREQUENCY": 1
 }
 ```
+The update frequency should be given in minutes.
 After the bot is up and running, the bot should create all of the files it needs automatically. 
 
 
