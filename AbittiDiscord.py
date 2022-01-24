@@ -1,3 +1,4 @@
+from turtle import update
 import discord
 from discord.ext import commands, tasks
 from discord.ext.commands.core import has_role
@@ -41,15 +42,17 @@ def updater():
     r = requests.get(url)
 
     with open('abittiversion.txt', 'r') as readcache:
-        getcache = readcache.read()
+        getcache = readcache.readline().strip()
     with open('abittiversion.txt', 'w+') as writecache:
-        writecache.write(r.text)
+        writecache.write((r.text).strip())
     readcache.close()
     writecache.close()
 
-    if getcache != r.text:
+    if getcache != (r.text).strip():
         buildmessage = f"```\nThere is a new version of Abitti available!\n\n{getcache} --> {r.text}\n\nClick here to download the new version:\n```https://static.abitti.fi/etcher-usb/koe-etcher.zip" 
-        return(buildmessage)
+        return(buildmessage, 1)
+    else:
+        return("No new version available.", 2)
 
 @bot.event
 async def on_ready():
@@ -67,12 +70,11 @@ async def getestimate(ctx):
 
 @tasks.loop(minutes=int(botconfig(4)))
 async def autoupdate():
-    try:
-        channel = bot.get_channel(int(botconfig(2)))
-        updateversion = updater()
-        print('Autoupdate completed')
-        await channel.send(updateversion)
-    except:
-        pass
+    channel = bot.get_channel(int(botconfig(2)))
+    updateversion = updater()
+    if updateversion[1] == 1:
+        await channel.send(updateversion[0])
+    elif updateversion[1] == 2:
+        print(updateversion[0])
 
 bot.run(botconfig(0))
