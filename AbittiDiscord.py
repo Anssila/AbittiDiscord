@@ -65,7 +65,7 @@ async def getestimate(ctx):
     except:
         await ctx.send('Error fetching version from cache.')
 
-@tasks.loop(hours=int(botconfig(4)))
+@tasks.loop(minutes=int(botconfig(4)))
 async def autoupdate():
     try:
         channel = bot.get_channel(int(botconfig(2)))

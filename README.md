@@ -15,7 +15,7 @@ To get the bot running, create a file called config.json that looks like this:
     "ADMINROLE": "Admin role name",
     "UPDATE_CHANNEL": "Channel ID for Abitti version notifications",
     "PREFIX": "Character to start the commands with",
-    "UPDATE_FREQUENCY": 1
+    "UPDATE_FREQUENCY": 60
 }
 ```
 The update frequency should be given in minutes.
