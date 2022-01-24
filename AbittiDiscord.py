@@ -1,4 +1,3 @@
-from turtle import update
 import discord
 from discord.ext import commands, tasks
 from discord.ext.commands.core import has_role
