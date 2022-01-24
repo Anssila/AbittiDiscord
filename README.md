@@ -1,7 +1,7 @@
 # AbittiDiscord
 A simple Discord bot that notifies users of new Abitti versions. New features might be added later on. If you have good ideas, feel free to do a PR.
 
-*Dependencies:**
+**Dependencies:**
 
 To run the bot, you need to install [Discord.py](https://pypi.org/project/discord.py/) and [Requests](https://pypi.org/project/requests/)
 
