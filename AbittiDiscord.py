@@ -44,8 +44,7 @@ def updater():
         getcache = readcache.readline().strip()
     with open('abittiversion.txt', 'w+') as writecache:
         writecache.write((r.text).strip())
-    readcache.close()
-    writecache.close()
+   
 
     if getcache != (r.text).strip():
         buildmessage = f"```\nThere is a new version of Abitti available!\n\n{getcache} --> {r.text}\n\nClick here to download the new version:\n```https://static.abitti.fi/etcher-usb/koe-etcher.zip" 
@@ -66,6 +65,15 @@ async def getestimate(ctx):
         await ctx.send(checkversion)
     except:
         await ctx.send('Error fetching version from cache.')
+
+@bot.command(name="update", aliases=["u"])
+async def updateversion(ctx):
+    try:
+        checkversion = updater()
+        await ctx.send(checkversion[0])
+    except:
+        await ctx.send('Error updating.')
+
 
 @tasks.loop(minutes=int(botconfig(4)))
 async def autoupdate():
