@@ -67,6 +67,7 @@ async def getestimate(ctx):
         await ctx.send('Error fetching version from cache.')
 
 @bot.command(name="update", aliases=["u"])
+@commands.has_role(botconfig(1))
 async def updateversion(ctx):
     try:
         checkversion = updater()

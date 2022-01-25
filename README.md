@@ -26,3 +26,6 @@ After the bot is up and running, the bot should create all of the files it needs
 
 **abittiversion or av**: 
 Get the current version of Abitti.
+
+**update or u**: 
+Manual update method for version changes.(Only for admins)
