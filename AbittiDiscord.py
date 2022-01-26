@@ -18,7 +18,6 @@ def botconfig(configparam):
 
 bot = commands.Bot(command_prefix=botconfig(3), case_insensitive=True, intents=intents)
 
-
 def versioncheck():
     with open('abittiversion.txt', 'r') as readcache:
         getcache = readcache.read()
