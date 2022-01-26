@@ -12,18 +12,12 @@ def botconfig(configparam):
     with open('config.json', 'r') as config:
         configjson = json.load(config)
 
-    if configparam == 0:
-        return(configjson['BOT_TOKEN'])
-    elif configparam == 1:
-        return(configjson['ADMINROLE'])
-    elif configparam == 2:
-        return(configjson['UPDATE_CHANNEL'])
-    elif configparam == 3:
-        return(configjson['PREFIX'])
-    elif configparam == 4:
-        return(configjson['UPDATE_FREQUENCY'])
+    configparams = ['BOT_TOKEN', 'ADMINROLE', 'UPDATE_CHANNEL', 'PREFIX', 'UPDATE_FREQUENCY']
+    return configjson[configparams[configparam]]
+
 
 bot = commands.Bot(command_prefix=botconfig(3), case_insensitive=True, intents=intents)
+
 
 def versioncheck():
     with open('abittiversion.txt', 'r') as readcache:
