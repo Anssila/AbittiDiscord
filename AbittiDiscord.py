@@ -68,7 +68,7 @@ async def getqr(ctx, *, var):
         image.save("qrcode.png")
         await ctx.send(file=discord.File("qrcode.png"))
     except:
-        await ctx.send('Error fetching version from cache.')
+        await ctx.send('Unable to create image.')
 
 @bot.command(name="update", aliases=["u"])
 @commands.has_role(botconfig(1))
