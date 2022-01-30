@@ -1,9 +1,9 @@
-# AbittiDiscord
+# LukioBot
 A simple Discord bot with some studying tools. New features might be added later on. If you have good ideas, feel free to do a PR.
 
 **Dependencies:**
 
-To run the bot, you need to install [Discord.py](https://pypi.org/project/discord.py/), [Requests](https://pypi.org/project/requests/) and [Qrcode with Pillow](https://pypi.org/project/qrcode/)
+To run the bot, you need to install [Discord.py](https://pypi.org/project/discord.py/), [Requests](https://pypi.org/project/requests/) and [Qrcode](https://pypi.org/project/qrcode/)
 
 **Starting the bot:**
 
