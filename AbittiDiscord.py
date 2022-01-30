@@ -4,6 +4,7 @@ from discord.ext.commands.core import has_role
 import requests
 import json
 import os
+import qrcode
 
 intents = discord.Intents.default()
 intents.members = True
@@ -23,6 +24,7 @@ def versioncheck():
         getcache = readcache.read()
     messagebuilder = f"```\nThe current version of Abitti is {getcache}\n```"
     return(messagebuilder)
+
 
 def updater():
     file_exists = os.path.exists('abittiversion.txt')
@@ -52,10 +54,19 @@ async def on_ready():
     print('Logged in as: ' + bot.user.name)
 
 @bot.command(name="abittiversion", aliases=["av"])
-async def getestimate(ctx):
+async def versionchecker(ctx):
     try:
         checkversion = versioncheck()
         await ctx.send(checkversion)
+    except:
+        await ctx.send('Error fetching version from cache.')
+
+@bot.command(name="qr")
+async def getqr(ctx, *, var):
+    try:
+        image = qrcode.make(var)
+        image.save("qrcode.png")
+        await ctx.send(file=discord.File("qrcode.png"))
     except:
         await ctx.send('Error fetching version from cache.')
 
