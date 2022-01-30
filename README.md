@@ -1,5 +1,5 @@
 # AbittiDiscord
-A simple Discord bot that notifies users of new Abitti versions. New features might be added later on. If you have good ideas, feel free to do a PR.
+A simple Discord bot with some studying tools. New features might be added later on. If you have good ideas, feel free to do a PR.
 
 **Dependencies:**
 
@@ -26,6 +26,9 @@ After the bot is up and running, the bot should create all of the files it needs
 
 **abittiversion or av**: 
 Get the current version of Abitti.
+
+**qr**: 
+Make a QR code from inputted text or URLs.
 
 **update or u**: 
 Manual update method for version changes.(Only for admins)
